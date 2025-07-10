@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: entrance-gateway
+
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL}
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+    include: ${SPRING_PROFILES_INCLUDE:eureka,actuator,swagger,security,redis,routes,grpc}
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.server: DEBUG
+    org.springframework.web.server.adapter.HttpWebHandlerAdapter: DEBUG

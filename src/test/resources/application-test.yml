@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+
+security:
+  endpoints:
+    public-endpoints:
+      - path: /auth/**
+        methods: [GET,POST]
+      - path: /members/**
+        methods: [POST]
+    protected-endpoints:
+      - path: /members/**
+        methods: [GET,PATCH,DELETE]
