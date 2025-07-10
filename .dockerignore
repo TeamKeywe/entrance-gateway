@@ -1,0 +1,24 @@
+#빌드 캐시
+.gradle
+build
+!build/libs/*.jar
+out
+target
+
+#IDE 설정
+*.iml
+.idea
+.vscode
+
+#OS 임시 파일
+.DS_Store
+Thumbs.db
+
+#Git 관련
+.git
+.gitignore
+
+# 로그, 환경변수
+*.log
+.env
+*.secret
